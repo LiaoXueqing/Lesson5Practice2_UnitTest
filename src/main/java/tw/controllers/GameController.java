@@ -1,8 +1,8 @@
 package tw.controllers;
 
 import com.google.inject.Inject;
-import tw.core.Game;
 import tw.commands.InputCommand;
+import tw.core.Game;
 import tw.core.model.GuessResult;
 import tw.views.GameView;
 

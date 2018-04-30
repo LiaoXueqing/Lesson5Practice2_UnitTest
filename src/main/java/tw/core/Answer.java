@@ -20,6 +20,10 @@ public class Answer {
         this.numList = numList;
     }
 
+    public List<String> getNumList() {
+        return numList;
+    }
+
     public static Answer createAnswer(String inputStr) {
         Answer answer = new Answer();
         List<String> inputList = Arrays.stream(inputStr.split(" ")).collect(Collectors.toList());
