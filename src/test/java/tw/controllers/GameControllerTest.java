@@ -44,7 +44,7 @@ public class GameControllerTest {
         when(command.input()).thenReturn(Answer.createAnswer("1 2 3 4"));
         gameController = new GameController(gameSpy,new GameView());
         gameController.play(command);
-        String result = "Game Status: success\r\n";
+        String result = "Game Status: success\n";
         assertEquals(systemOut(),result);
     }
     @Test
@@ -54,9 +54,9 @@ public class GameControllerTest {
 
         gameController = new GameController(gameSpy,new GameView());
         gameController.play(command);
-        String result ="Guess Result: 0A2B\r\n"+"Guess History:\r\n"+
-                "[Guess Numbers: 2 4 7 8, Guess Result: 0A2B]\r\n"+
-                "Game Status: continue\r\n" ;
+        String result ="Guess Result: 0A2B\n"+"Guess History:\n"+
+                "[Guess Numbers: 2 4 7 8, Guess Result: 0A2B]\n"+
+                "Game Status: continue\n" ;
         assertEquals(systemOut(),result);
     }
     private String systemOut() {
