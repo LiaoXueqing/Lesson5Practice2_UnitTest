@@ -18,7 +18,7 @@ public class InputValidatorTest {
     @Test
     public void should_return_false(){
         assertEquals(inputValidator.validate("3 4 5 6 7"),false);
-        assertEquals(inputValidator.validate("3 3 5 6 "),false);
+        assertEquals(inputValidator.validate("3 3 5 6"),false);
         assertEquals(inputValidator.validate("3 4 5 10"),false);
     }
 

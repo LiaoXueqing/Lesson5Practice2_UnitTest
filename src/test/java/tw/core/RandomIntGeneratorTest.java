@@ -22,9 +22,9 @@ public class RandomIntGeneratorTest {
     public ExpectedException expectedEx = ExpectedException.none();
 
     @Test
-    public void should_return_generate_nums() {
+    public void should_return_a_generate_nums() {
         RandomIntGenerator randomIntGenerator = new RandomIntGenerator();
-        String numOfGenerate = randomIntGenerator.generateNums(9, 4);
+        String numOfGenerate = randomIntGenerator.generateNums(10, 4);
 
         List<String> numOfGenerateList =
                 Arrays.stream(numOfGenerate.split(" "))
@@ -36,8 +36,12 @@ public class RandomIntGeneratorTest {
                 .filter(num->num<10)
                 .count();
         assertEquals(validatedNum,4);
+    }
+    @Test
+    public void should_return_an_IllegalArgumentException(){
+        RandomIntGenerator randomIntGenerator = new RandomIntGenerator();
         expectedEx.expect(IllegalArgumentException.class);
         expectedEx.expectMessage("Can't ask for more numbers than are available");
-        randomIntGenerator.generateNums(9,10);
+        randomIntGenerator.generateNums(10,11);
     }
 }
